@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -n 28            			#Number of tasks (cores)
+#SBATCH -p highmem					#Run on fat node
+#SBATCH -J bacillus.raxml1   		#Job name
+#SBATCH -o bacillus.raxml1.o%j  	#Output file name
+#SBATCH -t 24:00:00	 				#Run (wall) time 24 hours
+
+date
+
+module load costinit
+module load RAxML
+
+raxmlHPC-PTHREADS-AVX -s bacillus.phy -n bacillus1.out -m GTRCAT -f a -x 123 -N 1000 -p 456 -T 28
+
+date

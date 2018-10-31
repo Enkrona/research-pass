@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -n 280            			#Number of tasks (cores)
+#SBATCH -J bacillus_mp.bartik1   	#Job name
+#SBATCH -o bacillus_mp.bartik1.o%j  #Output file name
+#SBATCH -t 24:00:00	 				#Run (wall) time 24 hours
+
+date
+
+module load costinit
+module load mvapich2-2.2rc1/gcc
+module load RAxML_mpi
+
+raxmlHPC-MPI-AVX -s bacillus.phy -n bacillus.mp.out -m GTRCAT -f a -x 123 -N 1000 -p 456 -T 280
+
+date
