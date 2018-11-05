@@ -2,7 +2,7 @@ import subprocess
 
 pattern = ["?l","?l","?l","?l","?l","?l","?l"]
 for x in range(0, 7):
-    command = "echo \"hashct -a3 hash.txt "
+    command = "echo \"hashcat -a3 hash.txt "
     pattern[x] = "?d"
     if x > 0:
         pattern [x-1] = "?l"
