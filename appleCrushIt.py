@@ -11,12 +11,11 @@ for x in range(0, 8):
         pattern = patternReset(pattern)
         pattern[x] = "?u"
 
-        command = "echo \"hashcat -a3 hash.txt "
+        command = " echo hashcat --force --session " + str(x) + str(y) + " -a3 hash.txt "
         if pattern[y] != "?u":
             pattern[y] = "?d"
 
 
             tmp = ''.join(pattern)
             command += tmp
-            command += "\""
             subprocess.Popen(command, shell=True)
