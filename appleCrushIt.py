@@ -5,16 +5,16 @@ def patternReset(pattern):
     return pattern;
 
 pattern = ["?l","?l","?l","?l","?l","?l","?l","?l"]
-
+sessionID = 0
 for x in range(0, 8):
     for y in range(0, 8):
         pattern = patternReset(pattern)
         pattern[x] = "?u"
 
-        command = " echo hashcat --force --session " + str(x) + str(y) + " -a3 hash.txt "
         if pattern[y] != "?u":
             pattern[y] = "?d"
-
+	    sessionID += 1
+	    command = " echo hashcat --force --session " + str(sessionID) + " -a3 hash.txt "
 
             tmp = ''.join(pattern)
             command += tmp
