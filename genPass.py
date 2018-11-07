@@ -1,8 +1,11 @@
+#  This is exclusively for generation of md5 hashes of Apple requirements for passwords 
+
 import subprocess
 import random
 import string
 import hashlib
 i = 0
+
 while i < 1000:
     randomArr = []
 
@@ -17,7 +20,9 @@ while i < 1000:
 
     randomArr[rint] = str(random.randint(0,9))
     randomArr[rupper] = random.choice(string.ascii_uppercase)
-
+    
+    #  simply changing the "hashlib.md5" to another hash algo will allow it to gen other possibilities 
+    
     command = "echo " + hashlib.md5(str(''.join(randomArr))).hexdigest()
     subprocess.Popen(command, shell=True)
     i += 1
