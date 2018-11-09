@@ -14,7 +14,7 @@ for x in range(0, 8):
         if pattern[y] != "?u":
             pattern[y] = "?d"
 	    sessionID += 1
-	    command = " echo hashcat --force --session " + str(sessionID) + " -a3 hash.txt "
+	    command = "hashcat --force --session " + str(sessionID) + " -a3 ../appleHash.txt "
 
             tmp = ''.join(pattern)
             command += tmp
