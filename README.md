@@ -3,9 +3,9 @@ Research performed by myself, Daniel Favor, and Dr.'s Nathan Eloe and Scott Bell
 
 .masks files are used as pattern lists 
 
-hashcat -a3 appleHash.txt apple.masks 
+hashcat -a3 appleSHA256.txt apple.masks -m 1400
 
-This command will utilize hashcat to bruteforce all password hashes found within appleHash.txt using apple.masks as the patterns for generating vlaid passwords. Thereby, this will reduce the ammount of "junk" or impossible combinations which will never be valid, and only generate crack passwords which follow the minimum spec requirements which Apple has (and mirrored in apple.masks). 
+This command will utilize hashcat to bruteforce all password hashes found within appleHash.txt using apple.masks as the patterns for generating vlaid passwords. Thereby, this will reduce the ammount of "junk" or impossible combinations which will never be valid, and only generate crack passwords which follow the minimum spec requirements which Apple has (and mirrored in apple.masks). -m 1400 is the flag which specifies SHA256 hashes. 
 
 
 policygen 0.0.2 was utilized to generate .masks which are patterns for generating valid passwords. 
