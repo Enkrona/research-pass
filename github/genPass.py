@@ -1,4 +1,4 @@
-#  This is exclusively for generation of md5 hashes of Apple requirements for passwords 
+#  This is exclusively for generation of hashes of Githubs requirements for passwords 
 
 import subprocess
 import random
