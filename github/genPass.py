@@ -31,7 +31,7 @@ for i in range(0,1000):
    # rSymbol = 0
 
    # while rInt == rUpper:
-    #    rInt = random.randint(0,length-1)
+    rInt = random.randint(0,length-1)
      #   rUpper = random.randint(0,length-1)
       #  #rSymbol = random.randint(0,length-1)
 
